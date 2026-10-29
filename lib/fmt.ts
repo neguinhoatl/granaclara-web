@@ -1,0 +1,10 @@
+export const brl = (n: number) => Number(n).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+export const dmy = (d: string) => d.split('-').reverse().join('/');
+export const todaySP = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
+export const curMonth = () => todaySP().slice(0, 7);
+export const validMonth = (m?: string) => (m && /^\d{4}-\d{2}$/.test(m) ? m : curMonth());
+export const monthLabel = (m: string) => { const [y, mo] = m.split('-').map(Number);
+  const s = new Date(Date.UTC(y, mo - 1, 15)).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  return s[0].toUpperCase() + s.slice(1); };
+export const shiftMonth = (m: string, d: number) => { const [y, mo] = m.split('-').map(Number);
+  const t = new Date(Date.UTC(y, mo - 1 + d, 1)); return t.toISOString().slice(0, 7); };

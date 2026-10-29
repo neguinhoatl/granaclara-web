@@ -1,0 +1,46 @@
+const P: Record<string, string> = {
+  home: 'M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z',
+  history: 'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 3',
+  grid: 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
+  card: 'M3 6h18v12H3zM3 10h18',
+  pencil: 'M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4',
+  trash: 'M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6',
+  search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5',
+  calendar: 'M4 6h16v14H4zM4 10h16M8 3v5M16 3v5',
+  left: 'M15 5l-7 7 7 7', right: 'M9 5l7 7-7 7', down: 'M6 9l6 6 6-6',
+  arrowDown: 'M12 4v16M6 14l6 6 6-6', arrowUp: 'M12 20V4M6 10l6-6 6 6',
+  wallet: 'M4 7h14a2 2 0 0 1 2 2v9H4zM4 7l11-3v3M15 13h2',
+  plus: 'M12 5v14M5 12h14',
+  car: 'M5 16V11l2-5h10l2 5v5M3 16h18v3H3zM7 13h.01M17 13h.01',
+  cart: 'M3 4h2l2.5 11h11L21 8H6.5M9 20h.01M18 20h.01',
+  utensils: 'M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 2-3 6v4h3v8',
+  bus: 'M5 4h14v13H5zM5 11h14M8 20v-3M16 20v-3M8 14h.01M16 14h.01',
+  house: 'M3 11 12 4l9 7M5 10v10h14V10M10 20v-5h4v5',
+  ticket: 'M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM12 9.5l.9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z',
+  dots: 'M6 12h.01M12 12h.01M18 12h.01',
+  shirt: 'M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z',
+  heart: 'M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z',
+  book: 'M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 19V5',
+  target: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
+  tv: 'M3 6h18v12H3zM8 21h8',
+  inbox: 'M12 3v11M7 9l5 5 5-5M4 15v5h16v-5',
+  pie: 'M12 3v9h9a9 9 0 1 1-9-9zM15 3.5A9 9 0 0 1 20.5 9H15z',
+  chart: 'M4 20V4M4 20h16M7 15l4-4 3 3 5-6',
+  logout: 'M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10',
+  flag: 'M5 21V4M5 4h11l-2 4 2 4H5',
+  repeat: 'M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3',
+  layers: 'M12 3 2 8l10 5 10-5zM2 13l10 5 10-5M2 17.5l10 5 10-5',
+  check: 'M5 12l5 5 9-10',
+  bolt: 'M13 3 5 13h6l-1 8 8-10h-6z', cash: 'M3 7h18v10H3zM12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
+};
+export default function Icon({ n, s = 22, c = 'currentColor', w = 2 }: { n: string; s?: number; c?: string; w?: number }) {
+  return <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d={P[n] || P.dots} /></svg>;
+}
+export const CAT: Record<string, { i: string; c: string; bg: string }> = {
+  'Alimentação': { i: 'utensils', c: '#0d9488', bg: '#dff3ee' }, 'Transporte': { i: 'bus', c: '#7b8fb0', bg: '#e6ebf3' },
+  'Moradia': { i: 'house', c: '#c49a5e', bg: '#f5ead9' }, 'Lazer': { i: 'ticket', c: '#9b7fd1', bg: '#eee8f8' },
+  'Saúde e Beleza': { i: 'heart', c: '#e07a9a', bg: '#fbe8ee' }, 'Assinatura e Serviços': { i: 'tv', c: '#4f8fd6', bg: '#e3eefa' },
+  'Vestuário': { i: 'shirt', c: '#3b6fc4', bg: '#e2ebf8' }, 'Educação': { i: 'book', c: '#d59a2b', bg: '#fbf0d9' },
+  'Metas': { i: 'target', c: '#0f9d58', bg: '#e3f5ea' }, 'Outros': { i: 'dots', c: '#8a8f95', bg: '#ececec' },
+};
+export const catStyle = (name?: string | null, kind?: string) => kind === 'income' ? { i: 'inbox', c: '#1f8a4c', bg: '#e3f5ea' } : CAT[name || ''] || CAT['Outros'];
